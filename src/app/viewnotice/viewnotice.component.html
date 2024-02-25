@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="logo-one" src="../../assets/img/logo.png" alt="logo one" width="20%">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/attendance">Check Attendance</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sheet">Give Attendance</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/create">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/createnotice">Add Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/viewnotice">All Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Logout</a>
+          </li>
+          
+          
+          
+      </ul>
+    </div>
+  </nav>
+<div class="jumbotron" style="background-color: black;">
+    <h1 style="color: grey;text-align: center;">All Notice</h1>
+    <br>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" name="name" [(ngModel)]="name"  (ngModelChange)="Search"  placeholder="Search Notice By Date"  aria-label="Search">
+      </form>
+      <br>
+    <div *ngIf="res" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Notice</strong> Deleted Succesfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+ <br>      
+    <div class="row" *ngFor="let item of data| filter:name">
+        <div class="col-10">
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">
+                <p style="color: grey;">{{item.dt}}</p>
+                <h6>{{item.notice}}</h6>
+            </div>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-danger" (click)="dnotice(item)">Delete Notice</button>
+        </div>
+      </div>
+      
+</div>

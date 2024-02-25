@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="logo-one" src="../../assets/img/logo.png" alt="logo one" width="20%">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/attendance">Check Attendance</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sheet">Give Attendance</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/create">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/createnotice">Add Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/viewnotice">All Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Logout</a>
+          </li>
+          
+          
+          
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="jumbotron" style="background-color: black;" >
+    <h1 style="color: grey;">Add Student Form</h1>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sucessfull</strong> New Student Is Added Succesfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <br><br><br>
+      
+    <form [formGroup]="createstudent" (ngSubmit)="addstudent()">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="color: white;">Enter Student's Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="name">
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" style="color: white;">Enter Student's Registration Number</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Registration Number" formControlName="regno">
+                  </div> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" style="color: white;">Enter Student Roll No</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Roll No" formControlName="rollno">
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" style="color: white;">Enter Section</label>
+                    <select class="form-control"  id="exampleFormControlSelect1" formControlName="semister">
+                      <option>A</option>
+                      <option>B</option>
+                      <option>C</option>
+                      <option>D</option>
+                     
+                    </select>
+                  </div>
+            </div>
+          </div>
+        
+        
+         
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br><br>
+  </div>
+  

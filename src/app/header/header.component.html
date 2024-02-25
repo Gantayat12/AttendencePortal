@@ -1,0 +1,48 @@
+<div style="background-image: url(../../assets/img/back.png);">
+  <br><br><br><br><br>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        
+      </div>
+      <div class="col-sm">
+        <mat-card>
+          <img src="../../assets/img/header.jpg" alt="" width="100%">
+          <br>
+          <div class="row">
+            <div class="col">
+              <br><br>
+              <a href=""><b><p style="color: blue;">4-2 exams circular and exam fees payment details</p><br></b></a>
+              <a href=""><b><p style="color: blue;">For New Admissions Apply Online</p><br></b></a>
+              <a href=""><b><p style="color: blue;">Admission Enquiries</p><br></b></a>
+              <a href=""><b><p style="color: blue;">Student Office 365 Login</p></b></a>
+            </div>
+            <div class="col">
+              <br>
+              <div id="all">
+              <img src="../../assets/img/avt.png" alt="" width="30%"></div>
+              <div class="alert alert-{{p}}" role="alert">
+                <h6>{{currentval}}</h6>
+              </div>
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" #user>
+                </div>
+                <div class="form-group">
+                  
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #pass>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="getVal(user.value,pass.value)">Submit</button>
+              </form>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-2">
+        
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+</div>

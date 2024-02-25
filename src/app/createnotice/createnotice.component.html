@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="logo-one" src="../../assets/img/logo.png" alt="logo one" width="20%">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/attendance">Check Attendance</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sheet">Give Attendance</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/create">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html"></a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/createnotice">Add Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/viewnotice">All Notice</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="projects.html"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Logout</a>
+          </li>
+          
+          
+          
+      </ul>
+    </div>
+  </nav>
+<div class="jumbotron" style="background-color: black;">
+    <h1 style="color: grey;">Create Notice </h1>
+    <br>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sucessfull</strong>Admin New Notice Added Succesfully.Plaese Check In View Notice to check
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<form [formGroup]="createnotice" (ngSubmit)="addnotice()">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" style="color: white;">Enter The Date</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Enter The Date" formControlName="dt">
+              </div>
+        </div>
+        <div class="col">
+          
+        </div>
+      </div>
+    <br>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" style="color: white;">Enter The Notice</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Enter Your Notice" formControlName="notice"></textarea>
+      </div>
+      <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-warning">Submit Your Notice</button>
+        </div>
+        <div class="col">
+          
+        </div>
+      </div>
+</form>
+</div>
